@@ -32,7 +32,6 @@ async function buyma() {
     for (otherSellerObj of objOfOtherSellerResultArr) {
       otherSellerResultArr.push(otherSellerObj.buyma_user_id);
     }
-
     for (let k = 0; k < otherSellerResultArr.length; k++) {
       let oneSellerStartTime = new Date().getTime();
       // OtherSellerProduct테이블에서 데이터 취득
