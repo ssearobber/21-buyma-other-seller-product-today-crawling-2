@@ -168,7 +168,7 @@ async function buyma() {
               where: { buyma_product_id: product.buymaProductId },
             });
 
-            await OtherSellerProductTodayCount.upsert({
+            await OtherSellerProductTodayCount.create({
               other_seller_product_id: productResult.id,
               buyma_product_id: product.buymaProductId,
               buyma_product_name: product.buymaProductName,
@@ -211,7 +211,7 @@ async function buyma() {
       for (let product of totalProducts) {
         if (product.buymaProductId) {
           try {
-            await TemporaryOtherSellerProductCount.upsert({
+            await TemporaryOtherSellerProductCount.create({
               buyma_product_id: product.buymaProductId,
               buyma_product_name: product.buymaProductName,
               today: product.today,
